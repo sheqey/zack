@@ -1,0 +1,87 @@
+<%-include("./header.ejs")%>
+
+
+<p id="demo"></p>
+<div style="padding:10%">
+<form action="/api/creatnewbiz" method="POST">
+  <div class="mb-3">
+    <label for="exampleInputEmail1" id="demo" class="form-label">Email</label>
+    <input type="text" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <!-- //<div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Password</label>
+    <input type="text"  name="password" class="form-control" id="exampleInputEmail1">
+  </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" id="demo" class="form-label">business code</label>
+      <input type="text" name="abcode" class="form-control" id="exampleInputPassword1" aria-describedby="emailHelp">
+      <!-- //<div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">bussiness type code</label>
+      <input type="text"  name="atcode" class="form-control" id="exampleInputPassword1">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputPassword2" class="form-label">amenity name</label>
+        <input type="text"  name="aname" class="form-control" id="exampleInputPassword2">
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword3" class="form-label">amenity location</label>
+        <input type="text"  name="alonglat" class="form-control" id="exampleInputPassword3">
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword4" class="form-label">amenity image</label>
+        <input type="text"  name="aimage" class="form-control" id="exampleInputPassword4">
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword5" class="form-label">amenity description</label>
+        <input type="text"  name="adesc" class="form-control" id="exampleInputPassword5">
+      </div>
+    
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+  <script>
+
+ 
+var code = Math.floor(Math.random() * 10000000000);
+    var x = document.getElementById("exampleInputPassword1");
+    x.value = code;
+  
+
+
+    </script>
+
+    
+
+
+
+<script>
+  var xx = document.getElementById("exampleInputPassword3");
+  
+  function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else {
+    xx.value = "Geolocation is not supported by this browser.";
+  }
+}
+
+function showPosition(position) {
+  xx.value = "" + position.coords.latitude + 
+  " " + position.coords.longitude;
+}
+  document.body.onload = function(){
+    getLocation();
+  }
+  </script>
+
+
+
+
+
+
+
+
+<%-include("./footer.ejs")%>

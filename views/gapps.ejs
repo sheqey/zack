@@ -1,0 +1,53 @@
+<%-include("./aheader.ejs")%>
+
+
+
+
+
+
+
+<div style="padding:15%;background-color: rgb(255, 255, 255);align-items: center;">
+ 
+    <table class="table table-striped">
+        <thead>
+        
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Patient Name</th>
+            
+            <th scope="col">Email</th>
+            <th scope="col">Department</th>
+            <th scope="col">Date</th> 
+            <th scope="col">Scheduled Date</th>
+            <th scope="col">docter</th>
+            <th scope="col">set appoinment</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <%for(var i= 0 ;i < apps.length;i++){%>
+            <tr>
+              <th scope="row"><%=i+=1%></th>
+              <td> <%=apps[i].pname%></td>
+            
+              <td><%=apps[i].pemail%></td>
+              <td><%=apps[i].dep%></td>
+              <td><%=apps[i].pdate%></td>
+              <td><%=apps[i].appdate%></td>
+              <td><%=apps[i].appdoc%></td>
+              <td> <li class="nav-item cta mr-md-2"><a href="/set?id=<%=apps[i]._id%>" class="nav-link">set apoinment</a></li></td>
+            </tr>
+            <%}%>
+        </tbody>
+      </table>
+
+</div>
+
+
+
+
+
+
+
+
+<%-include("./afooter.ejs")%>

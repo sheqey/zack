@@ -1,0 +1,40 @@
+<%-include("./header.ejs")%>
+<div class="table">
+
+<form action="/api/addoc" method="POST" enctype="multipart/form-data">
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">code</label>
+        <input type="text" name="abcode" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <!-- //<div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+      </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Docter name</label>
+      <input type="text" name="docname" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+      <!-- //<div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Department</label>
+      <input type="text"  name="docdep" class="form-control" id="exampleInputPassword1">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Description</label>
+        <input type="text"  name="docdesc" class="form-control" id="exampleInputPassword1">
+      </div>
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">image</label>
+        <input type="file" name="image">
+      </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+
+
+</div>
+
+
+
+
+
+
+
+<%-include("./footer.ejs")%>

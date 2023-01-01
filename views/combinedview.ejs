@@ -1,0 +1,46 @@
+<%-include("./header.ejs")%>
+<div class="table" style="padding:10%">
+<table class="table table-striped">
+  <thead>
+  
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">email</th>
+      <th scope="col">password</th>
+      <th scope="col">place</th>
+      
+      <th scope="col">location</th>
+      <th scope="col">abcode</th>
+      <th scope="col">edit</th>
+      <th scope="col">delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% result.forEach(element => {for (i =0;i<element.data.length;i++){ %>
+        
+      <tr>
+        <th scope="row"><%=i+=1%></th>
+        <td> <%=element.email%></td>
+      
+        <td> <%=element.password%></td>
+        <td> <%=element.aname%></td>
+      
+        <td> <%=element.alonglat%></td>
+        <td><%=element.abcode%></td>
+        <td><a href="./combinedupdate?id=<%=element._id%>"><button class="btn"><i class="fa fa-folder"></i></button></a></td>
+        <td><a href="./api/cdelete?id=<%=element._id%>"><button class="btn"><i class="fa fa-trash"></i></button></a></td>
+      </tr>
+  
+      <% }});%>
+</table>
+
+</div>
+
+
+
+
+
+
+<%-include("./footer.ejs")%>
+
+

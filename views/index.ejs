@@ -1,0 +1,197 @@
+<%-include("./header.ejs")%>
+
+
+<link href="https://api.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.css" rel="stylesheet">
+<script src="https://api.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.js"></script>
+<style>
+body {  padding: 6%; top: -4%;}
+#map { position: absolute; top: 30%; bottom: 0; width: 80%; float:left;margin-left:3.5%;}
+</style>
+
+<style>
+.mapboxgl-popup {
+max-width: 400px;
+font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+}
+.bo, #bo2{
+    margin-top:1500%;
+    padding:10%;
+}
+</style>
+
+<div id="map"></div>
+<blockquote>
+    <pre>
+      <code>
+
+<div class="bo">
+    
+    {
+
+
+
+        "type": "FeatureCollection",
+        "features": [
+    
+        <%for(var i= 0 ;i < data.length;i++){%>
+      
+               {
+                            "type": "Feature",
+                            "properties": {
+                                "title": "<%=data[i].name%>",
+                                "description":"<%=data[i].age%> !a href='www.facebook.com'#  link here !/a#",
+                              "icon": "hospital"
+                            },
+                            "geometry": {
+                                "title": "southc",
+                                "type": "Point",
+                                "coordinates": [ <%=data[i].major%>]
+                            }
+                        },
+    
+                        <%}%>
+               {
+                            "type": "Feature",
+                            "properties": {
+                                "title": "southc",
+                                "description":"kkkkkkkkk ",
+                              "icon": "hospital"
+                            },
+                            "geometry": {
+                                "title": "southc",
+                                "type": "Point",
+                                "coordinates": [  36.83219976329909,-1.3120045087755394]
+                            }
+                        },
+    
+               
+              
+    
+             {
+                            "type": "Feature",
+                            "properties": {
+                                "title": "southc",
+                                  "description":"<p>dental hospital bla bla bla bla bla bla</p>  <p>jjjj</p> " ,
+                                 "icon": "bar"
+                            },
+                            "geometry": {
+                                "title": "southc",
+                                "type": "Point",
+                                "coordinates": [-77.038659, 38.931567]
+                            }
+                        }
+        
+        ]
+    
+    
+    
+    
+    
+    }
+
+     
+</div>
+<blockquote>
+    <pre>
+      <code>
+
+<script>
+
+
+
+var ttt = document.getElementsByClassName("bo")[0].innerHTML.toString();
+
+var y = ttt.replace(/!/g,"<").replace(/#/g,">");
+//console.log(y);
+
+//alert(y);
+
+ var yy = JSON.parse(y);
+//alert(y);
+mapboxgl.accessToken = 'pk.eyJ1IjoiYWJkaWl3ZiIsImEiOiJjbGI2N2V5MGswMmZuM3BtejJ6dnd6bjY4In0.b9Co2-l2YA24IWxOwY_MaA';
+    const map = new mapboxgl.Map({
+        container: 'map',
+        // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
+        style: 'mapbox://styles/mapbox/streets-v12',
+        center: [36.82811068850253, -1.3139004712042992],
+        zoom: 11.15
+    });
+
+
+    map.on('load', () => {
+
+        // Load an image from an external URL.
+     
+
+        map.addSource('places', {
+            // This GeoJSON contains features that include an "icon"
+            // property. The value of the "icon" property corresponds
+            // to an image in the Mapbox Streets style's sprite.
+            'type': 'geojson',
+            'data': yy
+            
+          
+        });
+        // Add a layer showing the places.
+        map.addLayer({
+            'id': 'places',
+            'type': 'symbol',
+            'source': 'places',
+            'layout': {
+                'icon-image': ['get', 'icon'],
+                'icon-allow-overlap': true,
+
+                // get the title name from the source's "title" property
+                'text-field': ['get', 'title'],
+                'text-font': [
+                    'Open Sans Semibold',
+                    'Arial Unicode MS Bold'
+                ],
+                'text-offset': [0, 1.25],
+                'text-anchor': 'top'
+            }
+        });
+      
+        // When a click event occurs on a feature in the places layer, open a popup at the
+        // location of the feature, with description HTML from its properties.
+        map.on('click', 'places', (e) => {
+            // Copy coordinates array.
+            const coordinates = e.features[0].geometry.coordinates.slice();
+            const description = e.features[0].properties.description;
+
+            // Ensure that if the map is zoomed out such that multiple
+            // copies of the feature are visible, the popup appears
+            // over the copy being pointed to.
+            while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+                coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+            }
+
+            new mapboxgl.Popup()
+                .setLngLat(coordinates)
+                .setHTML(description)
+                .addTo(map);
+        });
+
+        // Change the cursor to a pointer when the mouse is over the places layer.
+        map.on('mouseenter', 'places', () => {
+            map.getCanvas().style.cursor = 'pointer';
+        });
+
+        // Change it back to a pointer when it leaves.
+        map.on('mouseleave', 'places', () => {
+            map.getCanvas().style.cursor = '';
+        });
+    });
+</script>
+<script src="/bundle2.js" type="text/javascript" ></script>
+
+
+
+
+
+
+
+
+
+
+<%-include("./footer.ejs")%>

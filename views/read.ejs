@@ -1,0 +1,40 @@
+<%-include("./header.ejs")%>
+<div class="table">
+<table class="table table-striped">
+  <thead>
+  
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">movie</th>
+      
+      <th scope="col">price</th>
+      <th scope="col">hours</th>
+      <th scope="col">edit</th>
+      <th scope="col">delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%for(var i= 0 ;i < data.length;i++){%>
+      <tr>
+        <th scope="row"><%=i+=1%></th>
+        <td> <%=data[i].name%></td>
+      
+        <td> <%=data[i].age%></td>
+        <td><%=data[i].major%></td>
+        <td><a href="./update?id=<%=data[i]._id%>"><button class="btn"><i class="fa fa-folder"></i></button></a></td>
+        <td><a href="./api/delete?id=<%=data[i]._id%>"><button class="btn"><i class="fa fa-trash"></i></button></a></td>
+      </tr>
+      <%}%>
+  </tbody>
+</table>
+
+</div>
+
+
+
+
+
+
+<%-include("./footer.ejs")%>
+
+

@@ -1,0 +1,48 @@
+<%-include("./header.ejs")%>
+
+<script>
+  
+</script>
+<div class="table">
+
+<form action="api/cupdate/<%=data._id%>" method="post" id="update_user">
+    <div class="mb-3">
+        <label for="exampleInputEmail1" id="demo" class="form-label">business code</label>
+        <input type="text" name="abcode" value="<%=data.abcode%>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <!-- //<div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">bussiness type code</label>
+        <input type="text"  name="atcode" value="<%=data.atcode%>" class="form-control" id="exampleInputPassword1">
+      </div>
+      <div class="mb-3">
+          <label for="exampleInputPassword2" class="form-label">amenity name</label>
+          <input type="text"  name="aname" value="<%=data.aname%>"  class="form-control" id="exampleInputPassword2">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword3" class="form-label">amenity location</label>
+          <input type="text"  name="alonglat" value="<%=data.alonglat%>"  class="form-control" id="exampleInputPassword3">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword4" class="form-label">amenity image</label>
+          <input type="text"  name="aimage" value="<%=data.aimage%>" class="form-control" id="exampleInputPassword4">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword5" class="form-label">amenity description</label>
+          <input type="text"  name="adesc" value="<%=data.adesc%>" class="form-control" id="exampleInputPassword5">
+        </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+ 
+</div>
+  
+
+
+
+
+
+
+
+
+<%-include("./footer.ejs")%>

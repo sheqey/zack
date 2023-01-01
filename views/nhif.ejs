@@ -1,0 +1,36 @@
+<%-include("./h2header.ejs")%>
+
+
+
+
+
+
+
+<div class="table" style="padding: 20%;">
+    <h3 style="text-align: center;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;color: blue;">CHECK YOUR NHIF STATUS</h3>
+    <form action="/checknhif?id=<%=data.abcode%>" method="POST">
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">YOUR ID NUMBER</label>
+          <input type="text" name="idnum" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          <!-- //<div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    
+    </div>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<%-include("./h2footer.ejs")%>

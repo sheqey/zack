@@ -1,0 +1,105 @@
+
+      <footer class="ftco-footer ftco-section img" style="background-image: url(images/footer-bg.jpg);">
+        <div class="overlay"></div>
+        <div class="container-fluid px-md-5">
+           <div class="row mb-5">
+              <div class="col-md">
+                 <div class="ftco-footer-widget mb-4">
+                    <h2 class="ftco-heading-2"><%=data2.aname%></h2>
+                    <p>Far far away, behind the word mountains, far from the countries.</p>
+                    <ul class="ftco-footer-social list-unstyled mt-5">
+                       <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+                       <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+                       <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+                    </ul>
+                 </div>
+              </div>
+              <div class="col-md">
+                 <div class="ftco-footer-widget mb-4 ml-md-4">
+                    <h2 class="ftco-heading-2">Departments</h2>
+                    <ul class="list-unstyled">
+                     <%data5.forEach(data5 => { %>
+                       <li><a href="#"><span class="icon-long-arrow-right mr-2"></span><%=data5.depname%></a></li>
+                       <% }); %>
+                    </ul>
+                 </div>
+              </div>
+              <div class="col-md">
+                 <div class="ftco-footer-widget mb-4 ml-md-4">
+                    <h2 class="ftco-heading-2">Links</h2>
+                    <ul class="list-unstyled">
+                       <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Home</a></li>
+                       <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>About</a></li>
+                       <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Departments</a></li>
+                       <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Doctors</a></li>
+                       <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Blog</a></li>
+                       <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Pricing</a></li>
+                       <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Contact</a></li>
+                    </ul>
+                 </div>
+              </div>
+              <div class="col-md">
+                 <div class="ftco-footer-widget mb-4">
+                    <h2 class="ftco-heading-2">Services</h2>
+                    <ul class="list-unstyled">
+                     <%  data4.forEach(element => { %>
+                       <li><a href="#"><span class="icon-long-arrow-right mr-2"></span> <%=element.sdesc%></a></li>
+
+                       <% }); %>
+                       </ul>
+                 </div>
+              </div>
+              <div class="col-md">
+                 <div class="ftco-footer-widget mb-4">
+                    <h2 class="ftco-heading-2">Have a Questions?</h2>
+                    <div class="block-23 mb-3">
+                       <ul>
+                          <li><span class="icon icon-map-marker"></span><span class="text"><%=data3.adress%></span></li>
+                          <li><a href="#"><span class="icon icon-phone"></span><span class="text"><%=data3.contact%></span></a></li>
+                          <li><a href="#"><span class="icon icon-envelope pr-4"></span><span class="text"><span class="__cf_email__" data-cfemail="11787f777e51687e6463757e7c70787f3f727e7c"><%=data3.email%></span></span></a></li>
+                       </ul>
+                    </div>
+                 </div>
+              </div>
+           </div>
+           <div class="row">
+              <div class="col-md-12 text-center">
+                 <p>
+                    Copyright &copy;<script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart color-danger" aria-hidden="true"></i> by <a href="https://colorlib.com/" target="_blank">Colorlib</a>
+                 </p>
+              </div>
+           </div>
+        </div>
+     </footer>
+     <div id="ftco-loader" class="show fullscreen">
+        <svg class="circular" width="48px" height="48px">
+           <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+           <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00" />
+        </svg>
+     </div>
+     <script src="js/jquery.min.js"></script>
+     <script src="js/jquery-migrate-3.0.1.min.js"></script>
+     <script src="js/popper.min.js"></script>
+     <script src="js/bootstrap.min.js"></script>
+     <script src="js/jquery.easing.1.3.js"></script>
+     <script src="js/jquery.waypoints.min.js"></script>
+     <script src="js/jquery.stellar.min.js"></script>
+     <script src="js/owl.carousel.min.js"></script>
+     <script src="js/jquery.magnific-popup.min.js"></script>
+     <script src="js/aos.js"></script>
+     <script src="js/jquery.animateNumber.min.js"></script>
+     <script src="js/scrollax.min.js"></script>
+     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&amp;sensor=false"></script>
+     <script src="js/google-map.js"></script>
+     <script src="js/main.js"></script>
+     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+     <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        
+        gtag('config', 'UA-23581568-13');
+     </script>
+     <script defer src="https://static.cloudflareinsights.com/beacon.min.js/vaafb692b2aea4879b33c060e79fe94621666317369993" integrity="sha512-0ahDYl866UMhKuYcW078ScMalXqtFJggm7TmlUtp0UlD4eQk0Ixfnm5ykXKvGJNFjLMoortdseTfsRT8oCfgGA==" data-cf-beacon='{"rayId":"77d708ec4be3cb7b","token":"cd0b4b3a733644fc843ef0b185f98241","version":"2022.11.3","si":100}' crossorigin="anonymous"></script>
+  </body>
+</html>
